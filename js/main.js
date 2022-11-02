@@ -1,0 +1,22 @@
+let startBtn = document.getElementById('start'), //Начать расчёт - кнопка
+	budgetValue = document.getElementsByClassName('budget-value')[0], //Доход
+	dayBudgetValue = document.getElementsByClassName('daybudget-value')[0], //Бюджет на 1 день
+	levelValue = document.getElementsByClassName('level-value')[0], //Уровень дохода
+	expensesValue = document.getElementsByClassName('expenses-value')[0], //Обязательные расходы
+	optionalExpensesValue = document.getElementsByClassName('optionalexpenses-value')[0], //Возможные траты
+	incomeValue = document.getElementsByClassName('income-value')[0], //Доролнительный доход
+	monthSavingsValue = document.getElementsByClassName('monthsavings-value')[0], //накопления за 1 месяц
+	yearSavingsValue = document.getElementsByClassName('.yearsavings-value')[0]; //накопления за 1 год
+
+let expensesItem = document.getElementsByClassName('expenses-item'), //input обязательных расходов
+	expensesBtn = document.getElementsByTagName('button')[0], //утвердить обязательные расходы
+	optionalExpensesBtn = document.getElementsByTagName('button')[1], //утвердить необязательные расходы
+	calcBtn = document.getElementsByTagName('button')[2], //расчитать
+	optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'), //поля ввода необязательных расходов
+	incomeItem = document.querySelector('#income'), //статьи возможных доходов
+	checkSavings = document.querySelector('#savings'), //есть ли накопления?
+	sumValue = document.querySelector('#sum'), //сумма
+	percentValue = document.querySelector('#percent'), //процент
+	yearValue = document.querySelector('.year-value'), //год
+	monthValue = document.querySelector('.month-value'), //месяц
+	dayValue = document.querySelector('.day-value'); //день
