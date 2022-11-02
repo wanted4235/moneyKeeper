@@ -23,6 +23,10 @@ let expensesItem = document.getElementsByClassName('expenses-item'), //input о�
 
 let money, date;
 
+expensesBtn.disabled = true;
+optionalExpensesBtn.disabled = true;
+calcBtn.disabled = true;
+
 //функция инициализации бюджета и даты расчёта
 startBtn.addEventListener('click', function () {
 	date = prompt("Введите дату в формате YYYY-MM-DD", "");
@@ -37,6 +41,10 @@ startBtn.addEventListener('click', function () {
 	yearValue.value = new Date(Date.parse(date)).getFullYear();
 	monthValue.value = new Date(Date.parse(date)).getMonth() + 1;
 	dayValue.value = new Date(Date.parse(date)).getDate();
+
+	expensesBtn.disabled = false;
+	optionalExpensesBtn.disabled = false;
+	calcBtn.disabled = false;
 });
 
 //событие ввода обязательных расходов в месяц
@@ -73,7 +81,7 @@ optionalExpensesBtn.addEventListener('click', function () {
 calcBtn.addEventListener('click', function () {
 
 	if (appData.budget != undefined) {
-		appData.moneyPerDay = (appData.budget / 30).toFixed();
+		appData.moneyPerDay = ((appData.budget - +expensesValue.textContent) / 30).toFixed();
 		dayBudgetValue.textContent = appData.moneyPerDay;
 		//Блок кода с расчетом уровня достатка
 		if (appData.moneyPerDay <= 100) {
